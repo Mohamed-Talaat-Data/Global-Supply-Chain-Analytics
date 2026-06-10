@@ -1,0 +1,37 @@
+import mysql.connector
+import pandas as pd
+
+# 1. الربط بقاعدة البيانات (اكتب بيانات السيرفر بتاعك هنا)
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="hitman012.com",
+    database='supply_chain_db'
+)
+
+cursor = conn.cursor()
+
+# 2. هنجيب كل أسماء الجداول اللي في الداتا بتاعتك
+cursor.execute("SHOW TABLES")
+tables = [row[0] for row in cursor.fetchall()]
+
+print("🔎 جاري البحث عن القيم السالبة في جميع الجداول...\n")
+
+# 3. اللوب السحرية عشان تفحص عمود عمود
+for table in tables:
+    # هنقرا الجدول بالكامل في Pandas DataFrame
+    df = pd.read_sql(f"SELECT * FROM `{table}`", conn)
+    
+    # هنقي العواميد الرقمية بس (int و float)
+    numeric_cols = df.select_dtypes(include=['number']).columns
+    
+    for col in numeric_cols:
+        # لو فيه أي قيمة أصغر من صفر
+        if (df[col] < 0).any():
+            count_neg = (df[col] < 0).sum()
+            min_val = df[col].min()
+            print(f"❌ جدول [{table}] -> عمود ({col}) جواه {count_neg} قيمة سالبة! (أقل قيمة: {min_val})")
+
+conn.close()
+print("\n✅ فحص الداتا انتهى!")
+
