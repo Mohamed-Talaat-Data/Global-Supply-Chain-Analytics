@@ -1,8 +1,7 @@
 # 🌍 Global Supply Chain & Sales Analytics: End-to-End Data Project
 
-<p align="center">
-  <img src="Visuals/dashboard.png" alt="Global Supply Chain Dashboard" width="100%">
-</p>
+![Uploading dashboard.png.png…]()
+
 ## 📌 Project Overview
 
 This project is a comprehensive, end-to-end data analytics and business intelligence solution. It simulates a real-world data engineering environment where raw, unstructured data is transformed into actionable strategic insights. The project covers the entire data lifecycle: Schema Optimization, Data Cleaning (SQL), Exploratory Data Analysis (SQL & Python), and Data Visualization (Power BI & Figma).
