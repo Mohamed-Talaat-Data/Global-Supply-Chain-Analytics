@@ -1,7 +1,7 @@
 # 🌍 Global Supply Chain & Sales Analytics: End-to-End Data Project
 
 <p align="center">
-  <img src="image_e24ae5.png" alt="Global Supply Chain Dashboard" width="100%">
+  <img src="dashboard.png" alt="Global Supply Chain Dashboard" width="100%">
 </p>
 
 ## 📌 Project Overview
