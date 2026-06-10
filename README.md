@@ -1,6 +1,8 @@
 # 🌍 Global Supply Chain & Sales Analytics: End-to-End Data Project
 
-![Uploading dashboard.png.png…]()
+<p align="center">
+  <img src="Visuals/Screenshot 2026-06-10 075558.png" alt="Global Supply Chain Dashboard" width="100%">
+</p>
 
 ## 📌 Project Overview
 
