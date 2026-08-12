@@ -11,13 +11,13 @@ conn = mysql.connector.connect(
 
 cursor = conn.cursor()
 
-# 2. هنجيب كل أسماء الجداول اللي في الداتا بتاعتك
+# 2. هنجيب كل أسماء الجداول اللي في الداتا 
 cursor.execute("SHOW TABLES")
 tables = [row[0] for row in cursor.fetchall()]
 
 print("🔎 جاري البحث عن القيم السالبة في جميع الجداول...\n")
 
-# 3. اللوب السحرية عشان تفحص عمود عمود
+# 3. اللوب  عشان تفحص عمود عمود
 for table in tables:
     # هنقرا الجدول بالكامل في Pandas DataFrame
     df = pd.read_sql(f"SELECT * FROM `{table}`", conn)
